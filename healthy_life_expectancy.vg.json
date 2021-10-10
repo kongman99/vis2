@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Healthy Life Expectancy in 2021",
-    "width": 800,
-    "height": 600,
+    "width": 600,
+    "height": 300,
     "projection": {"type": "equirectangular"},
     "data": {
         "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
