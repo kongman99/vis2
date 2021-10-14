@@ -16,23 +16,43 @@
             "url": "https://raw.githubusercontent.com/kongman99/vis2/main/world-happiness-report-2021.csv"
             },
             "key": "Country name",
-            "fields": ["Healthy life expectancy"]
+            "fields": ["Ladder score","Social support", "Healthy life expectancy", "Freedom to make life choices", "Generosity", "Perceptions of corruption","Ladder score in Dystopia"]
             }
         }
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
     "color": {
-        "field": "Healthy life expectancy",
+        "field": "Ladder score",
         "type": "quantitative",
         "scale": {
             "type": "threshold",
-            "domain": [45, 55, 65,75]
+            "domain": [4.55, 5.5, 6.5,7.5]
         }
         },
-    "tooltip": [
-            {"field": "properties.NAME", "type": "nominal", "title": "Country name"},
-            {"field": "Healthy life expectancy", "type": "quantitative"}
-        ]
+    "tooltip": [{
+            "type": "nominal",
+            "field": "properties.NAME"
+          },{
+          "type": "quantitative",
+          "field": "Social support"
+        }, {
+          "type": "quantitative",
+          "field": "Healthy life expectancy"
+        }, {
+          "type": "quantitative",
+          "field": "Freedom to make life choices"
+        }, {
+          "type": "quantitative",
+          "field": "Generosity"
+        },
+        {
+          "type": "quantitative",
+          "field": "Ladder score in Dystopia"
+        },
+        {
+          "type": "quantitative",
+          "field": "Perceptions of corruption"
+        }]
     }
 }

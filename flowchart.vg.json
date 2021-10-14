@@ -1,128 +1,131 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/kongman99/vis2/main/world-happiness-report-2021.csv"
-    },
-    "params": [
-        {
-        "name": "Regional_selection",
-        "bind": {
-        "input": "select",
-        "options": [
-                    null,
-                    "South Asia",
-                    "Southeast Asia",
-                    "Sub-Saharan Africa",
-                    "Western Europe",
-                    "North America and ANZ",
-                    "Middle East and North Africa",
-                    "East Asia",
-                    "Middle East and North Africa",
-                    "Latin America and Caribbean",
-                    "Commonwealth of Independent States"
-                    ],
-        "labels":[
-                    "Show All",
-                    "South Asia",
-                    "Southeast Asia",
-                    "Sub-Saharan Africa",
-                    "Western Europe",
-                    "North America and ANZ",
-                    "Middle East and North Africa",
-                    "East Asia",
-                    "Middle East and North Africa",
-                    "Latin America and Caribbean",
-                    "Commonwealth of Independent States"],
-        "name": "Regional Selection "
-        }
-        }
-    ],
-    "width": 600,
-    "height": 300,
-    "transform": [
-      
-      {"filter": "Regional_selection == null || datum['Regional indicator'] == Regional_selection"},
-      {"window": [{"op": "count", "as": "index"}],
-                "sort": [{"field": "Ladder Score","order":"ascending"}]},
-      {"fold": ["Social support", "Healthy life expectancy", "Freedom to make life choices", "Generosity", "Perceptions of corruption"]},
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kongman99/vis2/main/world-happiness-report-2021.csv"
+  },
+  "params": [
       {
-        "joinaggregate": [
-          {"op": "min", "field": "value", "as": "min"},
-          {"op": "max", "field": "value", "as": "max"}
-        ],
-        "groupby": ["key"]
-      },
-      {
-        "calculate": "(datum.value - datum.min) / (datum.max-datum.min)",
-        "as": "norm_val"
+      "name": "Regional_selection",
+      "bind": {
+      "input": "select",
+      "options": [
+                  null,
+                  "South Asia",
+                  "Southeast Asia",
+                  "Sub-Saharan Africa",
+                  "Western Europe",
+                  "North America and ANZ",
+                  "Middle East and North Africa",
+                  "East Asia",
+                  "Middle East and North Africa",
+                  "Latin America and Caribbean",
+                  "Commonwealth of Independent States"
+                  ],
+      "labels":[
+                  "Show All",
+                  "South Asia",
+                  "Southeast Asia",
+                  "Sub-Saharan Africa",
+                  "Western Europe",
+                  "North America and ANZ",
+                  "Middle East and North Africa",
+                  "East Asia",
+                  "Middle East and North Africa",
+                  "Latin America and Caribbean",
+                  "Commonwealth of Independent States"],
+      "name": "Regional Selection "
       }
-    ],
-    "layer": [{
-      "mark": {"type": "rule", "color": "#ccc"},
-      "encoding": {
-        "detail": {"aggregate": "count"},
-        "x": {"field": "key"}
       }
-    }, {
-      "mark": "line",
-      "encoding": {
-        "color": {"type": "nominal", "field": "Regional indicator"},
-        "detail": {"type": "nominal", "field": "index"},
-        "opacity": {"value": 0.5},
-        "x": {"type": "nominal", "field": "key"},
-        "y": {"type": "quantitative", "field": "norm_val", "axis": null},
-        "tooltip": [{
-            "type": "nominal",
-            "field": "Regional indicator"
-          },{
-          "type": "quantitative",
-          "field": "Social support"
-        }, {
-          "type": "quantitative",
-          "field": "Healthy life expectancy"
-        }, {
-          "type": "quantitative",
-          "field": "Freedom to make life choices"
-        }, {
-          "type": "quantitative",
-          "field": "Generosity"
-        }]
-      }
-    }, {
-      "encoding": {
-        "x": {"type": "nominal", "field": "key"},
-        "y": {"value": 0}
-      },
-      "layer": [{
-        "mark": {"type": "text", "style": "label"},
-        "encoding": {
-          "text": {"aggregate": "max", "field": "max"}
-        }
-      }, {
-        "mark": {"type": "tick", "style": "tick", "size": 12, "color": "#ccc"}
-      }]
-    }, 
+  ],
+  "width": 600,
+  "height": 300,
+  "transform": [
+    
+    {"filter": "Regional_selection == null || datum['Regional indicator'] == Regional_selection"},
+    {"window": [{"op": "count", "as": "index"}],
+              "sort": [{"field": "Ladder Score","order":"ascending"}]},
+    {"fold": ["Social support", "Healthy life expectancy", "Freedom to make life choices", "Generosity", "Perceptions of corruption"]},
     {
-      "encoding": {
-        "x": {"type": "nominal", "field": "key"},
-        "y": {"value": 300}
-      },
-      "layer": [{
-        "mark": {"type": "text", "style": "label"},
-        "encoding": {
-          "text": {"aggregate": "min", "field": "min"}
-        }
+      "joinaggregate": [
+        {"op": "min", "field": "value", "as": "min"},
+        {"op": "max", "field": "value", "as": "max"}
+      ],
+      "groupby": ["key"]
+    },
+    {
+      "calculate": "(datum.value - datum.min) / (datum.max-datum.min)",
+      "as": "norm_val"
+    }
+  ],
+  "layer": [{
+    "mark": {"type": "rule", "color": "#ccc"},
+    "encoding": {
+      "detail": {"aggregate": "count"},
+      "x": {"field": "key"}
+    }
+  }, {
+    "mark": "line",
+    "encoding": {
+      "color": {"type": "nominal", "field": "Regional indicator"},
+      "detail": {"type": "nominal", "field": "index"},
+      "opacity": {"value": 0.5},
+      "x": {"type": "nominal", "field": "key"},
+      "y": {"type": "quantitative", "field": "norm_val", "axis": null},
+      "tooltip": [{
+          "type": "nominal",
+          "field": "Regional indicator"
+        },{
+        "type": "quantitative",
+        "field": "Social support"
       }, {
-        "mark": {"type": "tick", "style": "tick", "size": 12, "color": "#ccc"}
+        "type": "quantitative",
+        "field": "Healthy life expectancy"
+      }, {
+        "type": "quantitative",
+        "field": "Freedom to make life choices"
+      }, {
+        "type": "quantitative",
+        "field": "Generosity"
+      },
+      {
+        "type": "quantitative",
+        "field": "Perceptions of corruption"
       }]
-    }],
-    "config": {
-      "axisX": {"domain": false, "labelAngle": 0, "tickColor": "#ccc", "title": null},
-      "view": {"stroke": null},
-      "style": {
-        "label": {"baseline": "middle", "align": "right", "dx": -5},
-        "tick": {"orient": "horizontal"}
+    }
+  }, {
+    "encoding": {
+      "x": {"type": "nominal", "field": "key"},
+      "y": {"value": 0}
+    },
+    "layer": [{
+      "mark": {"type": "text", "style": "label"},
+      "encoding": {
+        "text": {"aggregate": "max", "field": "max"}
       }
+    }, {
+      "mark": {"type": "tick", "style": "tick", "size": 12, "color": "#ccc"}
+    }]
+  }, 
+  {
+    "encoding": {
+      "x": {"type": "nominal", "field": "key"},
+      "y": {"value": 300}
+    },
+    "layer": [{
+      "mark": {"type": "text", "style": "label"},
+      "encoding": {
+        "text": {"aggregate": "min", "field": "min"}
+      }
+    }, {
+      "mark": {"type": "tick", "style": "tick", "size": 12, "color": "#ccc"}
+    }]
+  }],
+  "config": {
+    "axisX": {"domain": false, "labelAngle": 0, "tickColor": "#ccc", "title": null},
+    "view": {"stroke": null},
+    "style": {
+      "label": {"baseline": "middle", "align": "right", "dx": -5},
+      "tick": {"orient": "horizontal"}
     }
   }
-  
+}
