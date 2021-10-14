@@ -11,7 +11,7 @@ body {
 }
 
 .page {
-    width: 1000px;
+    width: 1250px;
     background-color: white;
     margin: auto;
     padding: 50px;
@@ -31,8 +31,8 @@ h1 {
     padding-right: 20px;
 }
 
-.description-bottom {
-    padding-bottom: 20px;
+.description-left {
+    padding-left: 20px;
 }
 
 .pure-g {
