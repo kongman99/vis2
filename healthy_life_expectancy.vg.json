@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Healthy Life Expectancy in 2021",
+    "title": "Happiness Score of different country in 2021",
     "width": 600,
     "height": 300,
     "projection": {"type": "equirectangular"},
@@ -16,7 +16,7 @@
             "url": "https://raw.githubusercontent.com/kongman99/vis2/main/world-happiness-report-2021.csv"
             },
             "key": "Country name",
-            "fields": ["Ladder score","Social support", "Healthy life expectancy", "Freedom to make life choices", "Generosity", "Perceptions of corruption","Ladder score in Dystopia"]
+            "fields": ["Country name","Ladder score","Social support", "Healthy life expectancy", "Freedom to make life choices", "Generosity", "Perceptions of corruption","Ladder score in Dystopia"]
             }
         }
     ],
@@ -27,12 +27,12 @@
         "type": "quantitative",
         "scale": {
             "type": "threshold",
-            "domain": [4.55, 5.5, 6.5,7.5]
+            "domain": [4.5, 5.5, 6.5,7.5]
         }
         },
     "tooltip": [{
             "type": "nominal",
-            "field": "properties.NAME"
+            "field": "Country name"
           },{
           "type": "quantitative",
           "field": "Social support"
