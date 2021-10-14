@@ -12,39 +12,39 @@
                     null,
                     "South Asia",
                     "Southeast Asia",
-                    "Sub-saharan Africa",
+                    "Sub-Saharan Africa",
                     "Western Europe",
                     "North America and ANZ",
                     "Middle East and North Africa",
                     "East Asia",
                     "Middle East and North Africa",
                     "Latin America and Caribbean",
-                    "Commonweath of Independent States"
+                    "Commonwealth of Independent States"
                     ],
         "labels":[
                     "Show All",
                     "South Asia",
                     "Southeast Asia",
-                    "Sub-saharan Africa",
+                    "Sub-Saharan Africa",
                     "Western Europe",
                     "North America and ANZ",
                     "Middle East and North Africa",
                     "East Asia",
                     "Middle East and North Africa",
                     "Latin America and Caribbean",
-                    "Commonweath of Independent States"],
+                    "Commonwealth of Independent States"],
         "name": "Regional Selection "
         }
         }
     ],
-    "width": 500,
+    "width": 600,
     "height": 300,
     "transform": [
       
       {"filter": "Regional_selection == null || datum['Regional indicator'] == Regional_selection"},
       {"window": [{"op": "count", "as": "index"}],
                 "sort": [{"field": "Ladder Score","order":"ascending"}]},
-      {"fold": ["Social support", "Healthy life expectancy", "Freedom to make life choices", "Generosity"]},
+      {"fold": ["Social support", "Healthy life expectancy", "Freedom to make life choices", "Generosity", "Perceptions of corruption"]},
       {
         "joinaggregate": [
           {"op": "min", "field": "value", "as": "min"},

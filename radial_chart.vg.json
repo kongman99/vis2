@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A radial chart showing the ladder score of different country.",
+    "width": 800,
+    "height": 900,
+    "data": {
+        "url": "https://raw.githubusercontent.com/kongman99/vis2/main/world-happiness-report-2021.csv"
+      },
+    "params": [{
+      "name": "rank_slider",
+      "value": 20,
+      "bind": {"input": "range", "min": 1, "max": 148, "step": 1}
+    }],
+    "transform": [
+      {
+        "window": [{
+          "op": "rank",
+          "as": "rank"
+        }],
+        "sort": [{ "field": "Ladder score", "order": "descending" }]
+      },
+      {"filter": "datum.rank <= rank_slider"}
+    ],
+    "layer": [{
+      "mark": {"type": "arc", "innerRadius": 10, "stroke": "#fff"}
+    },{
+      "mark": {"type": "text", "radiusOffset": 10},
+      "encoding": {
+        "text": {"field": "rank", "type": "quantitative"}
+      ,
+      "tooltip": [{
+              "type": "nominal",
+              "field": "Country name"
+            },
+            {
+              "type": "nominal",
+              "field": "Regional indicator"
+            },
+            {
+            "type": "quantitative",
+            "field": "Ladder score"
+            }]
+    }
+      
+    }],
+    "encoding": {
+      "theta": {"field": "Ladder score", "type": "quantitative", "stack": true},
+      "radius": {"field": "Ladder score", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+      "color": {"field": "Regional indicator", "type": "nominal"}
+    }
+  }
+  
