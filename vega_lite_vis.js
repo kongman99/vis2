@@ -1,6 +1,6 @@
 var vg_1 = "healthy_life_expectancy.vg.json";
 var vg_2 = "flowchart.vg.json";
-var vg_2 = "radial_chart.vg.json";
+var vg_3 = "radial_chart.vg.json";
 
 vegaEmbed('#vis1', vg_1, {"actions": false});
 
