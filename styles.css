@@ -24,13 +24,13 @@ body {
 
 .description h2,
 h1 {
-    color: lightcoral;
+    color: darkslategrey;
     margin-top: 0px;
 }
 
 .description-right {
     background-color:beige;
-    color: #C1E1C1;
+    color: #5EAE9E;
     padding-top: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
@@ -38,7 +38,7 @@ h1 {
 
 .description-left {
     background-color:beige;
-    color: #C1E1C1;
+    color: #B96F6F;
     padding-top: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
@@ -46,6 +46,7 @@ h1 {
 
 .pure-g {
     margin-bottom: 25px;
+    color:lightslategrey;
 }
 
 .small-font {
