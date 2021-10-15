@@ -7,12 +7,12 @@ h1 {
 }
 
 body {
-    background-color: white;
+    background-color:beige;
 }
 
 .page {
     width: 1250px;
-    background-color: blue;
+    background-color: beige;
     margin: auto;
     padding: 50px;
     padding-top: 35px;
@@ -29,16 +29,18 @@ h1 {
 
 .description-right {
     background-color: white;
-    color: lightskyblue;
+    color: black;
     padding-top: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
 }
 
 .description-left {
     background-color: white;
-    color: lightskyblue;
+    color: black;
     padding-top: 20px;
     padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 .pure-g {
