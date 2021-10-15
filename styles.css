@@ -7,12 +7,12 @@ h1 {
 }
 
 body {
-    background-color: lightgray;
+    background-color: white;
 }
 
 .page {
     width: 1250px;
-    background-color: white;
+    background-color: blue;
     margin: auto;
     padding: 50px;
     padding-top: 35px;
@@ -28,11 +28,15 @@ h1 {
 }
 
 .description-right {
+    background-color: white;
+    color: lightskyblue;
     padding-top: 20px;
     padding-right: 20px;
 }
 
 .description-left {
+    background-color: white;
+    color: lightskyblue;
     padding-top: 20px;
     padding-left: 20px;
 }
