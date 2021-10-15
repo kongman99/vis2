@@ -24,11 +24,12 @@ body {
 
 .description h2,
 h1 {
+    color: lightcoral;
     margin-top: 0px;
 }
 
 .description-right {
-    background-color: beige;
+    background-color: "#d6f8b8";
     color: black;
     padding-top: 20px;
     padding-right: 20px;
@@ -36,7 +37,7 @@ h1 {
 }
 
 .description-left {
-    background-color: beige;
+    background-color: "#d6f8b8";
     color: black;
     padding-top: 20px;
     padding-left: 20px;
