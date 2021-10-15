@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Country ranking in terms happiness in different country by region",
+  "title": "World Happiness Rank in different country by region",
   "description": "A radial chart showing the ladder score of different country.",
   "width": 1000,
   "height": 600,

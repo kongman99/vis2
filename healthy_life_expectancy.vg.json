@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Happiness Score of different country in 2021",
+    "title": "Happiness Score worldwide in 2021",
     "width": 600,
     "height": 300,
     "background":"beige",
