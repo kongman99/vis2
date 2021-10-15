@@ -3,6 +3,7 @@
     "title": "Happiness Score of different country in 2021",
     "width": 600,
     "height": 300,
+    "background":"beige",
     "projection": {"type": "equirectangular"},
     "data": {
         "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",

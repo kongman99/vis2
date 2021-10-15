@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Country happiness level by attributes",
+  "background":"beige",
   "data": {
     "url": "https://raw.githubusercontent.com/kongman99/vis2/main/world-happiness-report-2021.csv"
   },

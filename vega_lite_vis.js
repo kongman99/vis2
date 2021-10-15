@@ -2,6 +2,7 @@ var vg_1 = "healthy_life_expectancy.vg.json";
 var vg_2 = "flowchart.vg.json";
 var vg_3 = "radial_chart.vg.json";
 
+
 vegaEmbed('#vis1', vg_1, {"actions": false});
 
 vegaEmbed('#vis2', vg_2, {"actions": false}).then(function(result) {
